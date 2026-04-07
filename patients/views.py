@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Patient
 from django.contrib.auth.decorators import login_required
-# Create your views here.
+
 
 @login_required
 def patient_list(request):
