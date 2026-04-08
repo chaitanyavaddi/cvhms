@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
+import resend
+from django.conf import settings
 
 # Create your views here.
 def signup(request):
@@ -10,6 +12,15 @@ def signup(request):
         user = User.objects.create_user(
             username=username,
             password=password
+        )
+        resend.api_key = settings.RESEND_API_KEY
+        resend.Emails.send(
+            {
+                'from': 'onboarding@resend.dev',
+                'to': ['hellochaitanyavaddi@gmail.com'],
+                "subject": 'Welcome to HMS',
+                "html": f'<h1>Welcome {user.username}</h1>'
+            }
         )
         login(request, user)
         return redirect('/dashboard')

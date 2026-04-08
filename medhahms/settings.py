@@ -128,3 +128,9 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_URL = '/login/'
+
+
+
+RESEND_API_KEY = "re_YCo1wFmj_7qpErpbDuhfCx16k9VXMy7Cn"
+
+GEMINI_API_KEY = "AIzaSyCwL_7JNmpgvHr7v3y5aZT67JuY_L1Gpw8"
