@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     "marketing",
     "users",
     "dashboard",
-    "appointments"
+    "appointments",
+    "rest_framework"
 ]
 
 MIDDLEWARE = [
